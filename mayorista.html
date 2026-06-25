@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venta Mayorista · Vida Sana Almacén Natural</title>
+<meta name="description" content="Venta mayorista de productos naturales en Gualeguay. Para dietéticas, comercios, emprendedores y revendedores. Pedí la lista de precios por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo.png">
+<style>
+  /* Estilos propios de la página Mayorista */
+  .may-intro-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; }
+  .may-intro-grid img{ border-radius:var(--radio); box-shadow:var(--sombra-md); }
+  .may-lista{ list-style:none; margin-top:22px; }
+  .may-lista li{ display:flex; gap:12px; align-items:flex-start; margin-bottom:14px; color:var(--gris); }
+  .may-lista li svg{ width:22px; height:22px; color:var(--oliva); flex-shrink:0; margin-top:3px; }
+  .pasos-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+  .paso-card{ background:#fff; border:1px solid var(--crema-osc); border-radius:var(--radio); padding:32px 26px; text-align:center; position:relative; }
+  .paso-num{ width:54px; height:54px; border-radius:50%; background:var(--naranja); color:#fff; font-family:var(--serif); font-size:1.7rem; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; }
+  .paso-card h3{ font-size:1.35rem; margin-bottom:8px; }
+  .paso-card p{ color:var(--gris); font-size:.92rem; }
+  .may-form-wrap{ display:grid; grid-template-columns:1fr 1.1fr; gap:48px; align-items:start; }
+  .may-form-box{ background:#fff; border:1px solid var(--crema-osc); border-radius:var(--radio); padding:34px; }
+  .may-cta-box{ background:var(--oliva-osc); color:#fff; border-radius:var(--radio); padding:40px 34px; }
+  .may-cta-box h2{ color:#fff; font-size:2rem; margin-bottom:14px; }
+  .may-cta-box p{ color:var(--crema-osc); margin-bottom:14px; }
+  .may-cta-box .dato-wa{ display:flex; gap:12px; align-items:center; margin:22px 0; }
+  .may-cta-box .dato-wa .ic{ width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; }
+  .may-cta-box .dato-wa .ic svg{ width:24px; height:24px; color:#25D366; }
+  .may-cta-box .dato-wa .num{ font-family:var(--serif); font-size:1.5rem; }
+  .form-row-2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:860px){ .may-intro-grid,.may-form-wrap{ grid-template-columns:1fr; gap:36px; } .pasos-grid{ grid-template-columns:1fr; } .form-row-2{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div id="header-slot"></div>
+
+<section class="page-hero">
+  <div class="contenedor">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Mayorista</div>
+    <h1>Venta Mayorista</h1>
+    <p style="color:var(--crema-osc);max-width:580px;margin:8px auto 0">Llevá lo natural a tu comercio. Trabajamos con dietéticas, almacenes, emprendedores y revendedores de toda la zona.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="seccion">
+  <div class="contenedor may-intro-grid">
+    <div>
+      <span class="kicker" style="font-family:var(--sans);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;color:var(--naranja);display:block;margin-bottom:14px">Comprá al por mayor</span>
+      <h2 style="font-size:clamp(2rem,3.6vw,2.7rem);margin-bottom:16px">Precios mayoristas para tu negocio</h2>
+      <p style="color:var(--gris)">En Vida Sana ofrecemos una amplia variedad de productos naturales a granel y fraccionados, con precios especiales por volumen. Seleccionamos cada producto recorriendo productores y mayoristas para asegurar calidad y precio accesible.</p>
+      <ul class="may-lista" id="mayLista"></ul>
+    </div>
+    <div>
+      <img src="assets/img/local-interior.jpg" alt="Productos a granel en Vida Sana">
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="seccion seccion-tono">
+  <div class="contenedor">
+    <div class="titulo-seccion">
+      <span class="kicker">Simple y rápido</span>
+      <h2>Cómo trabajamos</h2>
+      <p>La lista de precios mayorista actualizada te la enviamos directamente por WhatsApp.</p>
+    </div>
+    <div class="pasos-grid">
+      <div class="paso-card"><div class="paso-num">1</div><h3>Dejanos tus datos</h3><p>Completá el formulario con los datos de tu comercio y qué productos te interesan.</p></div>
+      <div class="paso-card"><div class="paso-num">2</div><h3>Te contactamos</h3><p>Te escribimos por WhatsApp con la <strong>lista de precios mayorista</strong> y resolvemos tus dudas.</p></div>
+      <div class="paso-card"><div class="paso-num">3</div><h3>Coordinamos el pedido</h3><p>Armás tu pedido y coordinamos el pago y el envío o retiro en el local.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO + CTA -->
+<section class="seccion">
+  <div class="contenedor may-form-wrap">
+    <!-- CTA WhatsApp directo -->
+    <div class="may-cta-box">
+      <h2>¿Preferís escribirnos directo?</h2>
+      <p>Si querés, contactanos ahora mismo por WhatsApp y te pasamos toda la información mayorista.</p>
+      <div class="dato-wa">
+        <div class="ic" id="waIcon"></div>
+        <div>
+          <div style="font-size:.78rem;color:var(--crema-osc)">WhatsApp mayorista</div>
+          <div class="num">+54 9 3444 50-1788</div>
+        </div>
+      </div>
+      <a href="https://wa.me/5493444501788?text=%C2%A1Hola%20Vida%20Sana!%20Quiero%20informaci%C3%B3n%20mayorista%20%F0%9F%8C%BF" target="_blank" class="btn btn-primario btn-bloque">Escribir por WhatsApp</a>
+      <p style="font-size:.8rem;margin-top:18px;color:var(--crema-osc)">Atención mayorista de Lunes a Viernes de 8:00 a 12:30 y de 16:00 a 20:00.</p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="may-form-box">
+      <h2 style="font-size:1.8rem;margin-bottom:8px">Solicitá información mayorista</h2>
+      <p style="color:var(--gris);font-size:.92rem;margin-bottom:24px">Completá tus datos y te enviamos la lista de precios por WhatsApp.</p>
+      <form id="mayForm" onsubmit="enviarMayorista(event)">
+        <div class="form-row-2">
+          <div class="form-campo"><label>Nombre y apellido *</label><input type="text" id="f-nombre" required placeholder="Tu nombre"></div>
+          <div class="form-campo"><label>Nombre del comercio</label><input type="text" id="f-comercio" placeholder="Tu negocio"></div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-campo"><label>Localidad *</label><input type="text" id="f-localidad" required placeholder="Ciudad / provincia"></div>
+          <div class="form-campo"><label>WhatsApp *</label><input type="tel" id="f-tel" required placeholder="Ej: 3444 50-1788"></div>
+        </div>
+        <div class="form-campo"><label>Rubro</label>
+          <select id="f-rubro">
+            <option>Dietética / Almacén natural</option>
+            <option>Almacén / Kiosco</option>
+            <option>Emprendedor/a gastronómico</option>
+            <option>Revendedor/a</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-campo"><label>¿Qué productos te interesan?</label><textarea id="f-productos" placeholder="Ej: frutos secos, semillas, harinas sin TACC, infusiones..."></textarea></div>
+        <button type="submit" class="btn btn-primario btn-bloque">Enviar y abrir WhatsApp</button>
+        <div class="form-aviso">📲 Al enviar se abre WhatsApp con tu consulta ya redactada hacia Vida Sana. <br><small>(En el sitio real también queda registrada en el correo mediante Fluent Forms.)</small></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="seccion cta-final">
+  <div class="contenedor">
+    <h2>Sumá lo natural a tu comercio</h2>
+    <p>Productos de calidad, variedad y precios mayoristas, con el asesoramiento de siempre.</p>
+    <a href="https://wa.me/5493444501788?text=%C2%A1Hola!%20Quiero%20info%20mayorista%20%F0%9F%8C%BF" target="_blank" class="btn btn-primario" style="font-size:1rem;padding:16px 34px">Pedir lista de precios</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="assets/js/site.js"></script>
+<script>
+  initChrome('mayorista');
+  // Beneficios mayoristas
+  qs('#mayLista').innerHTML = [
+    'Precios especiales por volumen',
+    'Amplia variedad: frutos secos, semillas, legumbres, cereales, infusiones y más',
+    'Productos a granel y fraccionados',
+    'Asesoramiento sobre productos sin TACC, veganos y aptos diabéticos',
+    'Envíos a Gualeguay, Entre Ríos y todo el país'
+  ].map(t=>`<li>${IC.check}<span>${t}</span></li>`).join('');
+  qs('#waIcon').innerHTML = IC.wa;
+
+  function enviarMayorista(e){
+    e.preventDefault();
+    const v = id => (qs('#'+id).value || '').trim();
+    let lineas = ['¡Hola Vida Sana! 🌿 Quiero información *mayorista*:', ''];
+    lineas.push('Nombre: ' + v('f-nombre'));
+    if(v('f-comercio')) lineas.push('Comercio: ' + v('f-comercio'));
+    lineas.push('Localidad: ' + v('f-localidad'));
+    lineas.push('WhatsApp: ' + v('f-tel'));
+    lineas.push('Rubro: ' + v('f-rubro'));
+    if(v('f-productos')) lineas.push('Productos de interés: ' + v('f-productos'));
+    const msg = encodeURIComponent(lineas.join('\n'));
+    window.open(`https://wa.me/${WA_NUM}?text=${msg}`,'_blank');
+  }
+  window.enviarMayorista=enviarMayorista;
+</script>
+</body>
+</html>

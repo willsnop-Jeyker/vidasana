@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto · Vida Sana Almacén Natural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo.png">
+</head>
+<body>
+<div id="header-slot"></div>
+
+<section class="page-hero">
+  <div class="contenedor">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Contacto</div>
+    <h1>Contacto</h1>
+    <p style="color:var(--crema-osc);max-width:540px;margin:8px auto 0">Estamos para ayudarte. Escribinos y te respondemos a la brevedad.</p>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor contacto-grid">
+    <div>
+      <h2 style="font-size:2rem;margin-bottom:20px">Hablemos</h2>
+      <div class="dato-fila" id="c-dir"></div>
+      <div class="dato-fila" id="c-tel"></div>
+      <div class="dato-fila" id="c-mail"></div>
+      <div class="dato-fila" id="c-hor"></div>
+      <a href="https://wa.me/5493444501788" target="_blank" class="btn btn-verde" style="margin-top:10px">Abrir WhatsApp</a>
+      <div class="ubicacion-mapa" style="margin-top:30px;min-height:280px">
+        <iframe src="https://www.google.com/maps?q=San+Antonio+Norte+161,+Gualeguay,+Entre+Rios&output=embed" loading="lazy" title="Mapa"></iframe>
+      </div>
+    </div>
+
+    <div>
+      <div style="background:#fff;border:1px solid var(--crema-osc);border-radius:var(--radio);padding:34px">
+        <h2 style="font-size:1.8rem;margin-bottom:8px">Envianos un mensaje</h2>
+        <p style="color:var(--gris);font-size:.92rem;margin-bottom:24px">Completá el formulario y te contactamos.</p>
+        <form onsubmit="enviar(event)">
+          <div class="form-campo"><label>Nombre y apellido</label><input type="text" required placeholder="Tu nombre"></div>
+          <div class="form-campo"><label>Email</label><input type="email" required placeholder="tu@email.com"></div>
+          <div class="form-campo"><label>Teléfono / WhatsApp</label><input type="tel" placeholder="3444 ..."></div>
+          <div class="form-campo"><label>Motivo</label>
+            <select><option>Consulta general</option><option>Pedido / disponibilidad</option><option>Venta mayorista</option><option>Asesoramiento nutricional</option></select>
+          </div>
+          <div class="form-campo"><label>Mensaje</label><textarea required placeholder="Contanos en qué te ayudamos..."></textarea></div>
+          <button type="submit" class="btn btn-primario btn-bloque">Enviar mensaje</button>
+          <div class="form-aviso">🧪 En la maqueta este formulario es de muestra. En el sitio real se conecta con <strong>Fluent Forms</strong> y envía el mensaje al correo de Vida Sana.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="assets/js/site.js"></script>
+<script>
+  initChrome('contacto');
+  qs('#c-dir').innerHTML  = `${IC.pin}<div><div class="d-tit">Dirección</div><div class="d-txt">${NEGOCIO.dir}</div></div>`;
+  qs('#c-tel').innerHTML  = `${IC.tel}<div><div class="d-tit">Teléfono / WhatsApp</div><div class="d-txt">${NEGOCIO.tel}</div></div>`;
+  qs('#c-mail').innerHTML = `${IC.mail}<div><div class="d-tit">Email</div><div class="d-txt">${NEGOCIO.email}</div></div>`;
+  qs('#c-hor').innerHTML  = `${IC.reloj}<div><div class="d-tit">Horarios</div><div class="d-txt">${NEGOCIO.horario}</div></div>`;
+  function enviar(e){ e.preventDefault(); alert('¡Gracias! En el sitio real tu mensaje se enviaría por Fluent Forms. (Esto es una maqueta de presentación.)'); e.target.reset(); }
+  window.enviar=enviar;
+</script>
+</body>
+</html>

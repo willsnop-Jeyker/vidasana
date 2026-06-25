@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrito · Vida Sana Almacén Natural</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo.png">
+</head>
+<body>
+<div id="header-slot"></div>
+
+<section class="page-hero" style="padding:48px 0">
+  <div class="contenedor">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Carrito</div>
+    <h1>Tu carrito</h1>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor" id="contenidoCarrito"></div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="assets/js/site.js"></script>
+<script>
+  initChrome('tienda');
+  const ENVIOS = [
+    { id:'retiro', nom:'Retiro en local (Gualeguay)', costo:0, nota:'San Antonio Norte 161' },
+    { id:'gualeguay', nom:'Envío a domicilio · Gualeguay', costo:1500, nota:'Gratis en compras +$20.000' },
+    { id:'entrerios', nom:'Envío · Entre Ríos', costo:3500, nota:'' },
+    { id:'pais', nom:'Envío · Resto del país', costo:6000, nota:'' },
+  ];
+  const PAGOS = [
+    { id:'transferencia', nom:'Transferencia bancaria' },
+    { id:'efectivo', nom:'Efectivo (retiro en local)' },
+    { id:'mercadopago', nom:'MercadoPago (tarjeta / dinero en cuenta)' },
+  ];
+  let envioSel='retiro', pagoSel='transferencia';
+
+  function costoEnvio(){
+    const e=ENVIOS.find(x=>x.id===envioSel);
+    if(e.id==='gualeguay' && cartTotal()>=20000) return 0;
+    return e.costo;
+  }
+
+  function pintar(){
+    const cart=getCart(), ids=Object.keys(cart);
+    const cont=qs('#contenidoCarrito');
+    if(!ids.length){
+      cont.innerHTML = `<div style="text-align:center;padding:60px 20px">
+        <div style="font-size:3rem">🛒</div>
+        <h2 style="margin:14px 0">Tu carrito está vacío</h2>
+        <p style="color:var(--gris);margin-bottom:24px">Descubrí nuestros productos naturales.</p>
+        <a href="tienda.html" class="btn btn-primario">Ir a la tienda</a></div>`;
+      return;
+    }
+    cont.innerHTML = `
+    <div class="checkout-layout">
+      <div class="checkout-items" id="ckItems"></div>
+      <div class="checkout-resumen">
+        <h3>Resumen</h3>
+        <div class="res-fila"><span>Subtotal</span><span id="ckSub"></span></div>
+
+        <div class="checkout-titulo">Entrega</div>
+        <div class="envio-opciones" id="ckEnvios"></div>
+
+        <div class="checkout-titulo">Medio de pago</div>
+        <div class="pago-opciones" id="ckPagos"></div>
+
+        <div class="res-fila"><span>Envío</span><span id="ckEnvio"></span></div>
+        <div class="res-fila total"><span>Total</span><span id="ckTotal"></span></div>
+        <button class="btn btn-primario btn-bloque" style="margin-top:16px" onclick="finalizar()">Confirmar pedido</button>
+        <a href="https://wa.me/${WA_NUM}" target="_blank" class="btn btn-secundario btn-bloque" style="margin-top:10px">Coordinar por WhatsApp</a>
+        <p style="font-size:.74rem;color:var(--gris);margin-top:14px;text-align:center">🔒 Compra como invitado o registrate al finalizar — vos elegís.</p>
+      </div>
+    </div>`;
+
+    qs('#ckItems').innerHTML = '<div style="padding:14px 0">' + ids.map(id=>{
+      const p=getProd(id), q=cart[id];
+      return `<div class="cart-item">
+        <img src="${p.img}" alt="${p.nom}">
+        <div style="flex:1">
+          <div class="ci-nom">${p.nom}</div>
+          <div class="ci-precio">${money(p.precio)} · ${p.peso}</div>
+          <div class="ci-qty">
+            <button onclick="setQty('${id}',${q-1});pintar()">−</button>
+            <span>${q}</span>
+            <button onclick="setQty('${id}',${q+1});pintar()">+</button>
+            <button class="ci-remove" onclick="removeFromCart('${id}');pintar()">Quitar</button>
+          </div>
+        </div>
+        <div style="font-weight:700;align-self:center">${money(p.precio*q)}</div>
+      </div>`;
+    }).join('') + '</div>';
+
+    qs('#ckEnvios').innerHTML = ENVIOS.map(e=>{
+      const costo = (e.id==='gualeguay' && cartTotal()>=20000) ? 0 : e.costo;
+      return `<label class="opcion-radio ${envioSel===e.id?'sel':''}">
+        <input type="radio" name="envio" ${envioSel===e.id?'checked':''} onchange="envioSel='${e.id}';pintar()">
+        <span>${e.nom}${e.nota?`<br><small style="color:var(--gris)">${e.nota}</small>`:''}</span>
+        <span class="op-precio">${costo===0?'Gratis':money(costo)}</span>
+      </label>`;
+    }).join('');
+
+    qs('#ckPagos').innerHTML = PAGOS.map(p=>`
+      <label class="opcion-radio ${pagoSel===p.id?'sel':''}">
+        <input type="radio" name="pago" ${pagoSel===p.id?'checked':''} onchange="pagoSel='${p.id}';pintar()">
+        <span>${p.nom}</span>
+      </label>`).join('');
+
+    qs('#ckSub').textContent = money(cartTotal());
+    qs('#ckEnvio').textContent = costoEnvio()===0 ? 'Gratis' : money(costoEnvio());
+    qs('#ckTotal').textContent = money(cartTotal()+costoEnvio());
+  }
+  window.pintar=pintar;
+  window.envioSel=envioSel; window.pagoSel=pagoSel;
+  Object.defineProperty(window,'envioSel',{get:()=>envioSel,set:v=>envioSel=v});
+  Object.defineProperty(window,'pagoSel',{get:()=>pagoSel,set:v=>pagoSel=v});
+
+  function finalizar(){
+    const e=ENVIOS.find(x=>x.id===envioSel), pg=PAGOS.find(x=>x.id===pagoSel);
+    const ids=Object.keys(getCart());
+    let msg = '¡Hola Vida Sana! 🌿 Quiero hacer este pedido:%0A%0A';
+    ids.forEach(id=>{ const p=getProd(id),q=getCart()[id]; msg+=`• ${q}x ${p.nom} (${p.peso}) — ${money(p.precio*q)}%0A`; });
+    msg += `%0ASubtotal: ${money(cartTotal())}%0AEntrega: ${e.nom} (${costoEnvio()===0?'Gratis':money(costoEnvio())})%0APago: ${pg.nom}%0A*Total: ${money(cartTotal()+costoEnvio())}*`;
+    window.open(`https://wa.me/${WA_NUM}?text=${msg}`,'_blank');
+  }
+  window.finalizar=finalizar;
+  pintar();
+</script>
+</body>
+</html>

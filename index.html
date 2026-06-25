@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vida Sana Almacén Natural · Gualeguay — Alimentarse mejor es vivir mejor</title>
+<meta name="description" content="Almacén natural en Gualeguay, Entre Ríos. Frutos secos, semillas, legumbres, cereales, infusiones y más. Envío gratis en Gualeguay desde $20.000.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo.png">
+</head>
+<body>
+<div id="header-slot"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="contenedor hero-grid">
+    <div class="hero-texto">
+      <h1>Alimentarse <em>mejor</em> es vivir <em>mejor</em></h1>
+      <p class="subtitulo">Productos naturales seleccionados con amor para acompañar tu camino hacia el bienestar. Asesoramiento personalizado desde Gualeguay.</p>
+      <div class="hero-botones">
+        <a href="tienda.html" class="btn btn-primario">Ver tienda &rarr;</a>
+        <a href="https://wa.me/5493444501788" target="_blank" class="btn btn-secundario">Hablar por WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-media">
+        <span class="etiqueta-flotante"><span class="punto"></span> Conocé nuestro local</span>
+        <video autoplay muted loop playsinline poster="assets/img/local-interior.jpg">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="tarjeta-flotante">
+        <div class="avatar">🌸</div>
+        <div>
+          <div class="t-lbl">Atendido por</div>
+          <div class="t-nom">Yamila y Cristian</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFICIOS ============ -->
+<section class="beneficios">
+  <div class="contenedor beneficios-grid" id="beneficios"></div>
+</section>
+
+<!-- ============ CATEGORÍAS ============ -->
+<section class="seccion">
+  <div class="contenedor">
+    <div class="titulo-seccion">
+      <span class="kicker">Nuestras categorías</span>
+      <h2>Todo lo natural, en un solo lugar</h2>
+      <p>Explorá nuestra selección de productos elegidos uno por uno pensando en tu bienestar.</p>
+    </div>
+    <div class="cats-grid" id="catsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ MÁS VENDIDOS ============ -->
+<section class="seccion seccion-tono">
+  <div class="contenedor">
+    <div class="seccion-head-flex">
+      <div>
+        <span class="kicker">Favoritos de la comunidad</span>
+        <h2>Los más vendidos</h2>
+      </div>
+      <div class="carrusel-nav">
+        <button onclick="scrollCarrusel('carr-top',-1)" aria-label="Anterior">&larr;</button>
+        <button onclick="scrollCarrusel('carr-top',1)" aria-label="Siguiente">&rarr;</button>
+      </div>
+    </div>
+    <div class="carrusel"><div class="carrusel-track" id="carr-top"></div></div>
+  </div>
+</section>
+
+<!-- ============ NOVEDADES ============ -->
+<section class="seccion">
+  <div class="contenedor">
+    <div class="seccion-head-flex">
+      <div>
+        <span class="kicker">Recién llegados</span>
+        <h2>Novedades</h2>
+      </div>
+      <div class="carrusel-nav">
+        <button onclick="scrollCarrusel('carr-nuevo',-1)" aria-label="Anterior">&larr;</button>
+        <button onclick="scrollCarrusel('carr-nuevo',1)" aria-label="Siguiente">&rarr;</button>
+      </div>
+    </div>
+    <div class="carrusel"><div class="carrusel-track" id="carr-nuevo"></div></div>
+  </div>
+</section>
+
+<!-- ============ NOSOTROS ============ -->
+<section class="seccion seccion-tono">
+  <div class="contenedor nosotros-grid">
+    <div class="nosotros-fotos solo">
+      <img src="assets/img/duenos.jpg" alt="Yamila y Cristian, dueños de Vida Sana">
+    </div>
+    <div class="nosotros-texto">
+      <span class="kicker">Nuestra historia</span>
+      <h2>Un sueño que empezó desde muy abajo</h2>
+      <p>Vida Sana nació como un sueño que comenzó en un pequeño local donde abundaban más las ganas que las certezas, pero con una convicción inquebrantable.</p>
+      <p>Nuestra misión siempre fue brindar herramientas y afecto para que las personas aprendan a alimentarse mejor, con una atención personalizada que ayuda a cubrir necesidades específicas, como las de personas con diabetes o celiaquía.</p>
+      <div class="firma-duenos">
+        <div class="av">🌿</div>
+        <div>
+          <div class="nom">Yamila y Cristian</div>
+          <div class="rol">Dueños de Vida Sana</div>
+        </div>
+      </div>
+      <div style="margin-top:28px"><a href="nosotros.html" class="btn btn-secundario">Conocé más sobre nosotros</a></div>
+    </div>
+  </div>
+  <div class="contenedor">
+    <div class="tira-fotos">
+      <div class="g-item"><img src="assets/img/fachada.jpg" alt="Frente del local Vida Sana" loading="lazy"></div>
+      <div class="g-item"><img src="assets/img/gondola-frutas.jpg" alt="Góndola de frutas secas" loading="lazy"></div>
+      <div class="g-item"><img src="assets/img/granel.jpg" alt="Productos a granel" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFERTAS ============ -->
+<section class="seccion">
+  <div class="contenedor">
+    <div class="seccion-head-flex">
+      <div>
+        <span class="kicker">Aprovechá</span>
+        <h2>Ofertas de la semana</h2>
+      </div>
+      <div class="carrusel-nav">
+        <button onclick="scrollCarrusel('carr-oferta',-1)" aria-label="Anterior">&larr;</button>
+        <button onclick="scrollCarrusel('carr-oferta',1)" aria-label="Siguiente">&rarr;</button>
+      </div>
+    </div>
+    <div class="carrusel"><div class="carrusel-track" id="carr-oferta"></div></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section class="seccion seccion-tono">
+  <div class="contenedor">
+    <div class="titulo-seccion">
+      <span class="kicker">Lo que dicen de nosotros</span>
+      <h2>Una comunidad que nos elige</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>“Encuentro siempre productos sin TACC de excelente calidad y me asesoran en todo. Para los celíacos es un alivio tener un lugar así en Gualeguay.”</p>
+        <div class="testi-autor"><div class="av">ML</div><div><div class="nom">María Laura G.</div><div class="loc">Gualeguay</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>“La atención de Yamila y Cristian es de otro nivel. Te explican las propiedades de cada producto. Se nota el amor que le ponen.”</p>
+        <div class="testi-autor"><div class="av">RF</div><div><div class="nom">Rodrigo F.</div><div class="loc">Gualeguay</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>“Soy diabética y acá siempre encuentro opciones aptas y ricas. Variedad, frescura y precios accesibles. Recomendadísimo.”</p>
+        <div class="testi-autor"><div class="av">SP</div><div><div class="nom">Silvia P.</div><div class="loc">Entre Ríos</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UBICACIÓN ============ -->
+<section class="seccion">
+  <div class="contenedor ubicacion-grid">
+    <div class="ubicacion-datos">
+      <span class="kicker" style="color:var(--naranja);font-family:var(--sans);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;margin-bottom:14px;display:block">Visitanos</span>
+      <h2>Te esperamos en el local</h2>
+      <div class="dato-fila" id="d-dir"></div>
+      <div class="dato-fila" id="d-hor"></div>
+      <div class="dato-fila" id="d-tel"></div>
+      <div style="margin-top:14px"><a href="https://wa.me/5493444501788" target="_blank" class="btn btn-primario">Escribinos por WhatsApp</a></div>
+    </div>
+    <div class="ubicacion-mapa">
+      <iframe src="https://www.google.com/maps?q=San+Antonio+Norte+161,+Gualeguay,+Entre+Rios&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Vida Sana"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="seccion cta-final">
+  <div class="contenedor">
+    <h2>¿Tenés dudas o querés un pedido especial?</h2>
+    <p>Escribinos por WhatsApp y te asesoramos personalmente. Coordinamos envíos en Gualeguay, Entre Ríos y todo el país.</p>
+    <a href="https://wa.me/5493444501788" target="_blank" class="btn btn-primario" style="font-size:1rem;padding:16px 34px">Hablar con Vida Sana</a>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+
+<script src="assets/js/site.js"></script>
+<script>
+  initChrome('inicio');
+  // Beneficios
+  qs('#beneficios').innerHTML = [
+    [IC.envio,'Envío gratis','En Gualeguay desde $20.000'],
+    [IC.bolsa,'Retiro en local','San Antonio Norte 161'],
+    [IC.tarjeta,'Pagá como quieras','Transferencia, efectivo o MercadoPago'],
+    [IC.chat,'Asesoramiento','Te ayudamos a elegir']
+  ].map(([ic,t,s])=>`<div class="beneficio">${ic}<div><div class="b-tit">${t}</div><div class="b-sub">${s}</div></div></div>`).join('');
+  // Categorías
+  qs('#catsGrid').innerHTML = CATS.map(c=>`
+    <a href="tienda.html?cat=${c.slug}" class="cat-card">
+      <div class="emoji">${c.emoji}</div>
+      <div class="cat-nom"><span class="cat-num">${PRODUCTS.filter(p=>p.cat===c.slug).length} productos</span>${c.nom}</div>
+    </a>`).join('');
+  // Carruseles
+  const fill=(id,arr)=> qs('#'+id).innerHTML = arr.map(cardProducto).join('');
+  fill('carr-top',    PRODUCTS.filter(p=>p.badge==='top'));
+  fill('carr-nuevo',  PRODUCTS.filter(p=>p.badge==='nuevo'));
+  fill('carr-oferta', PRODUCTS.filter(p=>p.badge==='oferta'));
+  // Datos ubicación
+  qs('#d-dir').innerHTML = `${IC.pin}<div><div class="d-tit">Dirección</div><div class="d-txt">${NEGOCIO.dir}</div></div>`;
+  qs('#d-hor').innerHTML = `${IC.reloj}<div><div class="d-tit">Horarios</div><div class="d-txt">${NEGOCIO.horario}</div></div>`;
+  qs('#d-tel').innerHTML = `${IC.tel}<div><div class="d-tit">Teléfono / WhatsApp</div><div class="d-txt">${NEGOCIO.tel}</div></div>`;
+</script>
+</body>
+</html>
