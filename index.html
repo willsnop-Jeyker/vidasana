@@ -15,30 +15,13 @@
 <div id="header-slot"></div>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="contenedor hero-grid">
-    <div class="hero-texto">
-      <h1>Alimentarse <em>mejor</em> es vivir <em>mejor</em></h1>
-      <p class="subtitulo">Productos naturales seleccionados con amor para acompañar tu camino hacia el bienestar. Asesoramiento personalizado desde Gualeguay.</p>
-      <div class="hero-botones">
-        <a href="tienda.html" class="btn btn-primario">Ver tienda &rarr;</a>
-        <a href="https://wa.me/5493444501788" target="_blank" class="btn btn-secundario">Hablar por WhatsApp</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-media">
-        <span class="etiqueta-flotante"><span class="punto"></span> Conocé nuestro local</span>
-        <video autoplay muted loop playsinline poster="assets/img/local-interior.jpg">
-          <source src="assets/video/hero.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="tarjeta-flotante">
-        <div class="avatar">🌸</div>
-        <div>
-          <div class="t-lbl">Atendido por</div>
-          <div class="t-nom">Yamila y Cristian</div>
-        </div>
-      </div>
+<section class="vs-hero" style="background-image:url(assets/img/hero-vidasana.jpg)">
+  <div class="vs-hero-inner">
+    <h1 class="vs-hero-title">Alimentarse <em>mejor</em> es vivir <em>mejor</em></h1>
+    <p class="vs-hero-sub">Productos naturales seleccionados con amor para acompañar tu camino hacia el bienestar. Asesoramiento personalizado desde Gualeguay.</p>
+    <div class="vs-hero-botones">
+      <a href="tienda.html" class="btn btn-primario">Ver tienda &rarr;</a>
+      <a href="https://wa.me/5493444501788" target="_blank" class="btn btn-secundario">Hablar por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -56,7 +39,7 @@
       <h2>Todo lo natural, en un solo lugar</h2>
       <p>Explorá nuestra selección de productos elegidos uno por uno pensando en tu bienestar.</p>
     </div>
-    <div class="cats-grid" id="catsGrid"></div>
+    <div class="vs-cats-grid" id="catsGrid"></div>
   </div>
 </section>
 
@@ -95,31 +78,19 @@
 </section>
 
 <!-- ============ NOSOTROS ============ -->
-<section class="seccion seccion-tono">
-  <div class="contenedor nosotros-grid">
-    <div class="nosotros-fotos solo">
-      <img src="assets/img/duenos.jpg" alt="Yamila y Cristian, dueños de Vida Sana">
+<section class="vs-nosotros">
+  <div class="contenedor vs-nosotros-cols">
+    <div class="vs-nosotros-foto">
+      <img src="assets/img/duenos-juntos.jpg" alt="Yamila y Cristian, dueños de Vida Sana">
+      <div class="vs-nosotros-tag"><span class="vs-tag-nom">Yamila &amp; Cristian</span><span class="vs-tag-rol">Dueños de casa</span></div>
     </div>
-    <div class="nosotros-texto">
-      <span class="kicker">Nuestra historia</span>
-      <h2>Un sueño que empezó desde muy abajo</h2>
-      <p>Vida Sana nació como un sueño que comenzó en un pequeño local donde abundaban más las ganas que las certezas, pero con una convicción inquebrantable.</p>
-      <p>Nuestra misión siempre fue brindar herramientas y afecto para que las personas aprendan a alimentarse mejor, con una atención personalizada que ayuda a cubrir necesidades específicas, como las de personas con diabetes o celiaquía.</p>
-      <div class="firma-duenos">
-        <div class="av">🌿</div>
-        <div>
-          <div class="nom">Yamila y Cristian</div>
-          <div class="rol">Dueños de Vida Sana</div>
-        </div>
-      </div>
-      <div style="margin-top:28px"><a href="nosotros.html" class="btn btn-secundario">Conocé más sobre nosotros</a></div>
-    </div>
-  </div>
-  <div class="contenedor">
-    <div class="tira-fotos">
-      <div class="g-item"><img src="assets/img/fachada.jpg" alt="Frente del local Vida Sana" loading="lazy"></div>
-      <div class="g-item"><img src="assets/img/gondola-frutas.jpg" alt="Góndola de frutas secas" loading="lazy"></div>
-      <div class="g-item"><img src="assets/img/granel.jpg" alt="Productos a granel" loading="lazy"></div>
+    <div class="vs-nosotros-texto">
+      <span class="vs-kicker-n">Nuestra historia</span>
+      <h2 class="vs-nosotros-h2">El alma de Vida Sana</h2>
+      <p class="vs-nosotros-p">Vida Sana nació como un sueño que empezó desde muy abajo, con más ganas que certezas pero con una convicción inquebrantable. Desde el primer día, nuestro propósito fue mucho más que vender productos: brindar herramientas y afecto para que cada persona aprenda a alimentarse mejor.</p>
+      <p class="vs-nosotros-p">Por eso nos formamos día a día sobre los alimentos y las hierbas medicinales, para acompañar a cada cliente de forma personalizada —también a quienes viven con diabetes o celiaquía—. Hoy ese sueño es un lugar de confianza en Gualeguay, y sentimos una profunda gratitud por cada persona que nos elige.</p>
+      <div class="vs-nosotros-quote">Creemos que alimentarse mejor es vivir mejor.<span class="vs-nosotros-firma">— Yamila y Cristian</span></div>
+      <a href="nosotros.html" class="btn btn-secundario">Conocé nuestra historia &rarr;</a>
     </div>
   </div>
 </section>
@@ -206,11 +177,12 @@
     [IC.tarjeta,'Pagá como quieras','Transferencia, efectivo o MercadoPago'],
     [IC.chat,'Asesoramiento','Te ayudamos a elegir']
   ].map(([ic,t,s])=>`<div class="beneficio">${ic}<div><div class="b-tit">${t}</div><div class="b-sub">${s}</div></div></div>`).join('');
-  // Categorías
-  qs('#catsGrid').innerHTML = CATS.map(c=>`
-    <a href="tienda.html?cat=${c.slug}" class="cat-card">
-      <div class="emoji">${c.emoji}</div>
-      <div class="cat-nom"><span class="cat-num">${PRODUCTS.filter(p=>p.cat===c.slug).length} productos</span>${c.nom}</div>
+  // Categorías (tarjetas diagonales con foto)
+  const PANEL = ['#5E6B2C','#C46A1A','#3D4520'];
+  qs('#catsGrid').innerHTML = CATS.map((c,i)=>`
+    <a href="tienda.html?cat=${c.slug}" class="vs-cat-card" style="--panel:${PANEL[i%3]}">
+      <span class="vs-cat-foto" style="background-image:url(assets/img/cat-${c.slug}.jpg)"></span>
+      <span class="vs-cat-panel"><span class="vs-cat-nom">${c.nom}</span><span class="vs-cat-ver">Ver productos &rarr;</span></span>
     </a>`).join('');
   // Carruseles
   const fill=(id,arr)=> qs('#'+id).innerHTML = arr.map(cardProducto).join('');
@@ -221,6 +193,23 @@
   qs('#d-dir').innerHTML = `${IC.pin}<div><div class="d-tit">Dirección</div><div class="d-txt">${NEGOCIO.dir}</div></div>`;
   qs('#d-hor').innerHTML = `${IC.reloj}<div><div class="d-tit">Horarios</div><div class="d-txt">${NEGOCIO.horario}</div></div>`;
   qs('#d-tel').innerHTML = `${IC.tel}<div><div class="d-tit">Teléfono / WhatsApp</div><div class="d-txt">${NEGOCIO.tel}</div></div>`;
+
+  // Animaciones de entrada al scrollear
+  (function(){
+    if(!('IntersectionObserver' in window)) return;
+    document.body.classList.add('vs-anim');
+    var sels = ['.vs-hero-title','.vs-hero-sub','.vs-hero-botones','.titulo-seccion','.seccion-head-flex','.vs-cat-card','.beneficio','.vs-nosotros-foto','.vs-nosotros-texto','.testi-card','.ubicacion-datos'];
+    var els = [];
+    sels.forEach(function(s){ qsa(s).forEach(function(el){ el.classList.add('vs-reveal'); els.push(el); }); });
+    ['#catsGrid','#beneficios'].forEach(function(g){
+      var grid = qs(g); if(!grid) return;
+      Array.prototype.forEach.call(grid.children, function(c,i){ c.style.transitionDelay=(i*0.06)+'s'; });
+    });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vs-in'); obs.unobserve(e.target); } });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(function(el){ obs.observe(el); });
+  })();
 </script>
 </body>
 </html>
